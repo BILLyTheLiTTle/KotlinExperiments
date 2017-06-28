@@ -27,6 +27,6 @@ fun sum(value1: Int, value2: Int): Int{
 }
 
 /*
-Declaring a function with expression body
+Declaring a function with expression body. The return statement is optional here
  */
 fun subtract(value1: Int, value2: Int): Int = value1 - value2
