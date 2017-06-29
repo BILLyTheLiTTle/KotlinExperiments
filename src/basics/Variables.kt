@@ -21,7 +21,9 @@ var aNumber = 2 // mutable
 const val anotherNumber = 3 // constant
 //const var wtf = 0 --> compile time error. Const and var? together?!
 
-//PARADIGM 3 - check main
+/*PARADIGM 3 - check main
+Declaring and use an array
+ */
 val numbersArray: IntArray = intArrayOf(1, 2, 3)
 
 fun main(args: Array<String>){
