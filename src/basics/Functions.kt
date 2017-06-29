@@ -5,7 +5,21 @@ package basics
  */
 
 /*
-Just testing the main!
+ PARADIGM 1 - check main
+ Declaring a function with a block body
+ */
+fun sum(value1: Int, value2: Int): Int{
+    return value1 + value2
+}
+
+/*
+ PARADIGM 2 - check main
+ Declaring a function with expression body. The return statement is optional here
+ */
+fun subtract(value1: Int, value2: Int): Int = value1 - value2
+
+/*
+ Just testing the main through the "Hello World"!
  */
 fun main(args: Array<String>){
     println("Hello, world!")
@@ -20,17 +34,3 @@ fun main(args: Array<String>){
     val subt = subtract(a, b)
     println("The subtraction of $a and $b is $subt")
 }
-
-/*
-PARADIGM 1 - check main
-Declaring a function with a block body
- */
-fun sum(value1: Int, value2: Int): Int{
-    return value1 + value2
-}
-
-/*
-PARADIGM 2 - check main
-Declaring a function with expression body. The return statement is optional here
- */
-fun subtract(value1: Int, value2: Int): Int = value1 - value2
