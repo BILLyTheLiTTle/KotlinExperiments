@@ -26,6 +26,19 @@ Declaring and use an array
  */
 val numbersArray: IntArray = intArrayOf(1, 2, 3)
 
+/* PARADIGM 4
+ Declaring and use Map.
+ Get/Set values to Map just like an array.
+ You can do this through operator overloading! I will explain it in the near future.
+ TODO mention here the file which shows operator overloading
+ */
+val numberToChar = TreeMap<Int, Char>()
+fun fillTheMap(){
+    numberToChar.set(1,'a')
+    numberToChar[2] = 'b'
+    println("The 1st item is ${numberToChar[1]} and the 2nd is ${numberToChar.get(2)}")
+}
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println(oneHundred) // prints 100.0
@@ -39,5 +52,8 @@ fun main(args: Array<String>){
 
     //PARADIGM 3
     println("Number one is not $numbersArray[0] but it is ${numbersArray[0]}")
+
+    // PARADIGM 4
+    fillTheMap()
 
 }

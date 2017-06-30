@@ -1,5 +1,7 @@
 package basics
 
+import java.util.*
+
 /**
  * Created by Tsapalos on 30/06/17.
  */
@@ -58,6 +60,21 @@ fun workWithMissingForLoops(){
         print("$i ")
 }
 
+/* PARADIGM 4
+ Iterate a Map
+ */
+val aMap = TreeMap<Int, Char>()
+fun fillTheMapAndParse() {
+    var i = 1;
+    for (c in 'A'..'Z') {
+        aMap[i] = c
+        i++
+    }
+    for ((key, value) in aMap) { // this is a destructuring declaration
+        println("$key = $value")
+    }
+}
+
 fun main(args: Array<String>){
 
     // PARADIGM 1
@@ -68,4 +85,7 @@ fun main(args: Array<String>){
 
     // PARADIGM 3
     workWithMissingForLoops()
+
+    // PARADIGM 4
+    fillTheMapAndParse()
 }
