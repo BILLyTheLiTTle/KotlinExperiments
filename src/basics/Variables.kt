@@ -1,13 +1,5 @@
 package basics
 
-/* PARADIGM 4
- In case I import something from Kotlin packages I could import anything apart from classes.
- I could import public functions are variables.
- I am not showing this in the next import (import java.util.*) but imagine something like this:
- import basics.sum
- to import the "sum" function from the "basics" package.
- This import will be redundant at this point cuz I am already at the "basics" package!
- */
 import java.util.*
 
 /**
