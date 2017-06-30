@@ -75,6 +75,12 @@ fun fillTheMapAndParse() {
     }
 }
 
+/* PARADIGM 5
+ The "in" operator can be used to in value checks
+ */
+fun isSmallLetter() = 'b' in 'a'..'z'
+fun isNotBetweenZeroToNine() = 1 !in 0..9
+
 fun main(args: Array<String>){
 
     // PARADIGM 1
@@ -88,4 +94,8 @@ fun main(args: Array<String>){
 
     // PARADIGM 4
     fillTheMapAndParse()
+
+    // PARADIGM 5
+    println(isSmallLetter())
+    println(isNotBetweenZeroToNine())
 }
