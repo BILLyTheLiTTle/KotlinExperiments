@@ -12,13 +12,15 @@ Declaring and assigning a variable simultaneously
  */
 val oneHundred = 10e1
 
-/*
-PARADIGM 2 - check main
-Mutable, immutable, constant references
+/* PARADIGM 2 - check main
+ Mutable, immutable, constant references.
+ If you don't understand the comments I put below, open this file in IntelliJ IDEA and go to menu bar ->
+ Tools -> Kotlin -> Show Kotlin Bytecode and you will understand one and for all
  */
-val date = Date()// immutable
-var aNumber = 2 // mutable
-const val anotherNumber = 3 // constant
+val date = Date()// val variables are immutable, in Java has getter method only
+var aNumber = 2 // var variables are mutable, in Java has setter and getter methods
+const val anotherNumber = 3 // const val variables are constant, in java is like final static variable
+                            // (no getter, no setter)
 //const var wtf = 0 --> compile time error. Const and var? together?!
 
 /*PARADIGM 3 - check main

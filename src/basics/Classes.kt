@@ -8,7 +8,7 @@ package basics
  PARADIGM 1 - check main
  val variables are immutable, in Java has getter method only
  var variables are mutable, in Java has setter and getter methods
- const val variables are constant, in java is like final static variable (no getter, no setter)
+ const val variables are not allowed inside a class
  */
 class Person (val name: String, var age: Int)
 
