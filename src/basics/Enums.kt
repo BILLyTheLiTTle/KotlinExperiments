@@ -67,7 +67,7 @@ fun showMixedFeelings (day1: Day, day2: Day) =
 fun showRealFeelingsOfTheDay (today: Day): String {
     val feeling = when {
         (today == Day.MONDAY) -> "Thanks God, I will go to work again"
-        (today ==Day.TUESDAY) || (today == Day.WEDNESDAY) -> "I miss Monday so much"
+        (today == Day.TUESDAY) || (today == Day.WEDNESDAY) -> "I miss Monday so much"
         (today == Day.THURSDAY) -> "One more day to have a boring weekend"
         (today == Day.FRIDAY) -> "What an productive week!"
         (today == Day.SATURDAY) -> "What to do with my life now?"

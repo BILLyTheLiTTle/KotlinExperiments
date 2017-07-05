@@ -33,7 +33,7 @@ fun explainSimpleIteration() =
  How can I do it?
  The answer is you can't, that's why Kotlin is so easy.
  It misses a lot for features just to keep it simple!
- Really? Do you believe me?
+ Really? Do you believe me? Keep reading, mister!
  */
 fun workWithMissingForLoops(){
     for(i in 1..10) // 10 is included

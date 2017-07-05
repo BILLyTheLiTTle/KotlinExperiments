@@ -41,6 +41,14 @@ fun fillTheMap(){
     println("The 1st item is ${numberToChar[1]} and the 2nd is ${numberToChar.get(2)}")
 }
 
+/* PARADIGM 5
+ This is called extension property.
+ These properties don't have any state. You cannot add extra fields to existing instances of Java objects.
+ Comment the line with the "get" method and uncomment the " ='a' " area and see the error.
+ */
+val Random.nextCapitalChar: Char //= 'a'
+        get() = (this.nextInt(25) + 65).toChar()
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -61,5 +69,9 @@ fun main(args: Array<String>){
     // PARADIGM 4
     println("\nPARADIGM 4")
     fillTheMap()
+
+    // PARADIGM 5
+    println("\nPARADIGM 5")
+    println("${Random(System.currentTimeMillis()).nextCapitalChar}")
 
 }
