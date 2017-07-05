@@ -5,7 +5,7 @@ package basics
  */
 
 /*
- PARADIGM 1 - check main
+ PARADIGM 1
  val variables are immutable, in Java has getter method only
  var variables are mutable, in Java has setter and getter methods
  const val variables are not allowed inside a class
@@ -13,7 +13,7 @@ package basics
 class Person (val name: String, var age: Int)
 
 /*
- PARADIGM 2 - check main
+ PARADIGM 2
  A class with custom getter and setter method
  */
 class Woman (val name: String){

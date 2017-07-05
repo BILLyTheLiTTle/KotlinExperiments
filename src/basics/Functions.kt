@@ -19,8 +19,7 @@ import basics.max as maxInt
  * Created by Tsapalos on 28/06/17.
  */
 
-/*
- PARADIGM 1 - check main
+/* PARADIGM 1
  Declaring a function with a block body
  */
 fun sum(value1: Int, value2: Int): Int{
@@ -28,7 +27,7 @@ fun sum(value1: Int, value2: Int): Int{
 }
 
 /*
- PARADIGM 2 - check main
+ PARADIGM 2
  Declaring a function with expression body. The return statement is optional here
  */
 fun subtract(value1: Int, value2: Int): Int = value1 - value2
@@ -70,6 +69,19 @@ fun createAMap(key1: Int, value1: String, key2: Int, value2: String, key3: Int =
  */
 fun Random.nextCapitalChar() = (this.nextInt(25) + 65).toChar()
 
+/* PARADIGM 6
+ Extension functions depend on the static type of the variable being declared,
+ not on the runtime type of the value stored in that variable
+ */
+fun Any.hello() = "Hello from Any"
+fun String.hello() = "Hello from String"
+
+/* PARADIGM 7
+ In case an extension function has the same name with a member function, the extension functions takes precedence.
+ If you want to run the example with the original "toUpperCase" method, just comment the line below.
+ */
+fun String.toUpperCase() = "It is not the original toUpperCase() method"
+
 fun main(args: Array<String>){
     // Just testing the main through the "Hello World"!
     println("Hello, world!")
@@ -98,4 +110,13 @@ fun main(args: Array<String>){
     // PARADIGM 5
     println("\nPARADIGM 5")
     println("The max integer is ${maxInt(1,2)}")
+
+    // PARADIGM 6
+    println("\nPARADIGM 6")
+    val sth: Any = "String"
+    println(sth.hello())
+
+    // PARADIGM 7
+    println("\nPARADIGM 7")
+    println("all letters are capital".toUpperCase())
 }

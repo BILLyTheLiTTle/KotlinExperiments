@@ -7,7 +7,7 @@ import java.util.*
  */
 
 /*
-PARADIGM 1 - check main
+PARADIGM 1
 Declaring and assigning a variable simultaneously
  */
 val oneHundred = 10e1
@@ -23,7 +23,7 @@ const val anotherNumber = 3 // const val variables are constant, in java is like
                             // (no getter, no setter)
 //const var wtf = 0 --> compile time error. Const and var? together?!
 
-/*PARADIGM 3 - check main
+/*PARADIGM 3
 Declaring and use an array
  */
 val numbersArray: IntArray = intArrayOf(1, 2, 3)

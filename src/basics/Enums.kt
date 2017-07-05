@@ -12,14 +12,14 @@ import basics.Planet.*
  * https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
  */
 
-/* PARADIGM 1 - check main
+/* PARADIGM 1
  Simple enum class example
  */
 enum class Day{
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
 }
 
-/* PARADIGM 2 - check main
+/* PARADIGM 2
  Complicated enum class example
  */
 enum class Planet (val mass: Double, val radius: Double) {
