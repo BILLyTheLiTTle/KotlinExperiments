@@ -1,5 +1,7 @@
 package basics
 
+import java.util.*
+
 /**
  * Created by Tsapalos on 28/06/17.
  */
@@ -42,6 +44,16 @@ fun createAMap(key1: Int, value1: String, key2: Int, value2: String, key3: Int =
     println("The map I created is $myMap")
 }
 
+/* PARADIGM 4
+ This is called extension function.
+ It is defined outside of the class (Random class at this example) but it can be called like if it was inside.
+ Look at the main method to see how it can be called so that you will understand the "this" reference
+ (which can be omitted if you want to). You just added a function to Random class without editing it, or extend it.
+
+ PITFALL: You still don't have to private or protected members of the original class.
+ */
+fun Random.nextCapitalChar() = (this.nextInt(25) + 65).toChar()
+
 fun main(args: Array<String>){
     // Just testing the main through the "Hello World"!
     println("Hello, world!")
@@ -59,4 +71,7 @@ fun main(args: Array<String>){
     // PARADIGM 3
     createAMap(key1 = 1, key2 = 2, key3 = 3, value1 = "one", value2 = "two", value3 = "three")
     createAMap(key1 = 1, key2 = 2, value1 = "one", value2 = "two", value3 = "three")
+
+    // PARADIGM 4
+    println("${Random(System.currentTimeMillis()).nextCapitalChar()}")
 }
