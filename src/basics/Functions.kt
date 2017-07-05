@@ -2,6 +2,19 @@ package basics
 
 import java.util.*
 
+/* PARADIGM 5
+ In "ExpressionsStatements" class there is a method "max".
+ It is useless to import a method that already belongs to the same package but I would like to try the "as" keyword.
+ From now on, in this file I could call the "max" as "maxInt".
+
+ This is useful in case you import several functions with the same name from different packages.
+ You can also import them using the full name (package.one.FunctionName and package.two.FunctionName)
+ but if you have extension functions this is the only way to resolve the conflict.
+
+ NOTE: Method "max" cannot be called at this file. It is "maxInt".
+ */
+import basics.max as maxInt
+
 /**
  * Created by Tsapalos on 28/06/17.
  */
@@ -50,7 +63,10 @@ fun createAMap(key1: Int, value1: String, key2: Int, value2: String, key3: Int =
  Look at the main method to see how it can be called so that you will understand the "this" reference
  (which can be omitted if you want to). You just added a function to Random class without editing it, or extend it.
 
- PITFALL: You still don't have to private or protected members of the original class.
+ If you see Kotlin ByteCode (menu toolbar -> Tools -> Kotlin -> Kotlin ByteCode) you will see that
+ this method is declared as static (and final also). So, there is no overriding for you, sir!
+
+ PITFALL: You still don't have access to private or protected members of the original class.
  */
 fun Random.nextCapitalChar() = (this.nextInt(25) + 65).toChar()
 
@@ -78,4 +94,8 @@ fun main(args: Array<String>){
     // PARADIGM 4
     println("\nPARADIGM 4")
     println("${Random(System.currentTimeMillis()).nextCapitalChar()}")
+
+    // PARADIGM 5
+    println("\nPARADIGM 5")
+    println("The max integer is ${maxInt(1,2)}")
 }
