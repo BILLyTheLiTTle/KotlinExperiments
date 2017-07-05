@@ -59,19 +59,23 @@ fun main(args: Array<String>){
     println("Hello, world!")
 
     //PARADIGM 1
+    println("\nPARADIGM 1")
     val a = 1
     val b = 2
     val sumer = sum(a, b)//Oooh, the summer!!!
     println("The sum of $a and $b is $sumer")
 
     //PARADIGM 2
+    println("\nPARADIGM 2")
     val subt = subtract(a, b)
     println("The subtraction of $a and $b is $subt")
 
     // PARADIGM 3
+    println("\nPARADIGM 3")
     createAMap(key1 = 1, key2 = 2, key3 = 3, value1 = "one", value2 = "two", value3 = "three")
     createAMap(key1 = 1, key2 = 2, value1 = "one", value2 = "two", value3 = "three")
 
     // PARADIGM 4
+    println("\nPARADIGM 4")
     println("${Random(System.currentTimeMillis()).nextCapitalChar()}")
 }

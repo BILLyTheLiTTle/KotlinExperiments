@@ -43,9 +43,11 @@ fun fillTheMap(){
 
 fun main(args: Array<String>){
     //PARADIGM 1
+    println("PARADIGM 1")
     println(oneHundred) // prints 100.0
 
     //PARADIGM 2
+    println("\nPARADIGM 2")
     println("The initial date I have is: $date") // prints Thu Jun 29 13:34:44 EEST 2017
     //date = Date() --> throws compile time error because this is a val
     date.time = 0
@@ -53,9 +55,11 @@ fun main(args: Array<String>){
     //Remember, the reference is immutable, not the object itself
 
     //PARADIGM 3
+    println("\nPARADIGM 3")
     println("Number one is not $numbersArray[0] but it is ${numbersArray[0]}")
 
     // PARADIGM 4
+    println("\nPARADIGM 4")
     fillTheMap()
 
 }

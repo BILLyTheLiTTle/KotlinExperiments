@@ -80,22 +80,27 @@ fun showRealFeelingsOfTheDay (today: Day): String {
 
 fun main(args: Array<String>){
     // PARADIGM 1
+    println("PARADIGM 1")
     val myFavoriteDay = Day.MONDAY
     if(myFavoriteDay == Day.MONDAY){
         println("Really? Are you human?")
     }
 
     // PARADIGM 2, 3
+    println("\nPARADIGM 2, 3")
     val myEarthWeight = 82.0 // Thanks Kotlin for keeping my weight immutable (it is val, remember?)! You are so kind!
     val mass = myEarthWeight / EARTH.surfaceGravity()
     println("My weight in Mars is: ${MARS.surfaceWeight(mass)}")
 
     // PARADIGM 4
+    println("\nPARADIGM 4")
     println(showFeelingsOfTheDay(Day.WEDNESDAY))
 
     // PARADIGM 5
+    println("\nPARADIGM 5")
     println(showMixedFeelings(Day.SUNDAY, Day.SATURDAY))
 
     // PARADIGM 6
+    println("\nPARADIGM 6")
     println(showRealFeelingsOfTheDay(Day.SUNDAY))
 }

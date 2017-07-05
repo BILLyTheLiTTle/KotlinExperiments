@@ -45,11 +45,14 @@ fun tryToPrintTheNumber(reader: BufferedReader){
 fun main(args: Array<String>){
 
     // PARADIGM 1
+    println("PARADIGM 1")
     canIThrowException(false) // change it to true to throw the Exception
 
     // PARADIGM 2
+    println("\nPARADIGM 2")
     printTheNumber(BufferedReader(StringReader("12"))) //change to "12a" and see what happens
 
     // PARADIGM 3
+    println("\nPARADIGM 3")
     tryToPrintTheNumber(BufferedReader(StringReader("12a")))
 }

@@ -84,18 +84,23 @@ fun isNotBetweenZeroToNine() = 1 !in 0..9
 fun main(args: Array<String>){
 
     // PARADIGM 1
+    println("PARADIGM 1")
     println(max(1,2))
 
     // PARADIGM 2
+    println("\nPARADIGM 2")
     explainSimpleIteration()
 
     // PARADIGM 3
+    println("\nPARADIGM 3")
     workWithMissingForLoops()
 
     // PARADIGM 4
+    println("\nPARADIGM 4")
     fillTheMapAndParse()
 
     // PARADIGM 5
+    println("\nPARADIGM 5")
     println(isSmallLetter())
     println(isNotBetweenZeroToNine())
 }
