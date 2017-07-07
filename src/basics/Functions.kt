@@ -101,6 +101,25 @@ fun printAllArgs(vararg values: Int) {
  */
 infix fun Int.add(that: Int) = this + that
 
+/* PARADIGM 10
+ Nested functions. It is not a good example of the nested functions. It is so unnecessary, but it is simple!
+
+ Note that local functions have access to all parameters and variables of the enclosing function
+ and you are to go!
+ */
+fun printMin(value1: Int, value2: Int) {
+    fun startProgress() = println("I will find the minimum number!")
+    fun middleProgress(): Int {
+        println("I am doing it right now...")
+        return if (value1 < value2) value1 else value2
+    }
+    fun endProgress(min: Int) = println("Found it: $min")
+
+    startProgress()
+    val min = middleProgress()
+    endProgress(min)
+}
+
 fun main(args: Array<String>){
     // Just testing the main through the "Hello World"!
     println("Hello, world!")
@@ -149,4 +168,8 @@ fun main(args: Array<String>){
     println("\nPARADIGM 9")
     println(1 add 2)
     println(1.add(2)) // The same as above
+
+    // PARADIGM 10
+    println("\nPARADIGM 10")
+    printMin(1,2)
 }

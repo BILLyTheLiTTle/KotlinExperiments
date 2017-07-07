@@ -49,6 +49,13 @@ fun fillTheMap(){
 val Random.nextCapitalChar: Char //= 'a'
         get() = (this.nextInt(25) + 65).toChar()
 
+/* PARADIGM 6
+ By using triple-quoted string you will get exactly what you see. No need for escaping characters.
+ */
+val simpleString = "You called me \"Bill\".\nI am not Bill for you mister!"
+val tripleQuotedString = """You called me "Bill".
+I am not Bill for you mister!"""
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -74,4 +81,8 @@ fun main(args: Array<String>){
     println("\nPARADIGM 5")
     println("${Random(System.currentTimeMillis()).nextCapitalChar}")
 
+    // PARADIGM 6
+    println("\nPARADIGM 6")
+    println(simpleString)
+    println(tripleQuotedString)
 }
