@@ -94,6 +94,13 @@ fun printAllArgs(vararg values: Int) {
     println()
 }
 
+/* PARADIGM 9
+ Maybe this example is to complex for the explaining the infix modifier.
+ The moral of the story is that I can omit the dot (.) after the object and before the method call!
+ And the parenthesis also! It looks like an every day language.
+ */
+infix fun Int.add(that: Int) = this + that
+
 fun main(args: Array<String>){
     // Just testing the main through the "Hello World"!
     println("Hello, world!")
@@ -133,7 +140,13 @@ fun main(args: Array<String>){
     println("all letters are capital".toUpperCase())
 
     // PARADIGM 8
+    println("\nPARADIGM 8")
     printAllArgs(1, 2, 3, 10)
     val intArr = intArrayOf(1, 2, 3, 4, 5)
     printAllArgs(*intArr)
+
+    // PARADIGM 9
+    println("\nPARADIGM 9")
+    println(1 add 2)
+    println(1.add(2)) // The same as above
 }
