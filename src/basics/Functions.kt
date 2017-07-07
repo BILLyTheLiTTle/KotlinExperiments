@@ -82,6 +82,18 @@ fun String.hello() = "Hello from String"
  */
 fun String.toUpperCase() = "It is not the original toUpperCase() method"
 
+/* PARADIGM 8
+ The varargs keyword let you specify an arbitrary number of parameters for a function.
+
+ PITFALL: If you pass an array as vararg argument you have to explicitly unpack it using the spread operator.
+ You can do this by putting an asterisk (*) before the array that you want to be expanded
+ */
+fun printAllArgs(vararg values: Int) {
+    for (value in values)
+        print(value)
+    println()
+}
+
 fun main(args: Array<String>){
     // Just testing the main through the "Hello World"!
     println("Hello, world!")
@@ -119,4 +131,9 @@ fun main(args: Array<String>){
     // PARADIGM 7
     println("\nPARADIGM 7")
     println("all letters are capital".toUpperCase())
+
+    // PARADIGM 8
+    printAllArgs(1, 2, 3, 10)
+    val intArr = intArrayOf(1, 2, 3, 4, 5)
+    printAllArgs(*intArr)
 }
