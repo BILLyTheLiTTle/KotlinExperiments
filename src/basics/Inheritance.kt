@@ -32,13 +32,24 @@ interface Survival {
  PARADIGM 3
  Inherit from another interface also. Doing it we have a problem in calling the stand method from an interface.
  See the declaration of stand method to find out how this is done.
+
+ PARADIGM 4
+ What is a final method? What is an open method? Can a method be final and override inside an open class?
+ Make my mind hurt!
+
+ open: A class or method with this modifier is allowed to have subclasses or get overriden.
+ final: A class or method with this modifier cannot have subclasses or get overriden.
+ All classes in Kotlin are final by default. Read "Effective Java" if you want to find out why.
+ override: Just declare that you override a method from an open class or interface.
+
+ Uncomment the stand function at Dog class and see the compile-time error
  */
-class Animal : Motion, Survival {
+open class Animal : Motion, Survival {
     override fun walk() {
         println("I am walking cuz I am an animal")
     }
 
-    override fun stand() {
+    final override fun stand() {
         super<Motion>.stand()
         super<Survival>.stand()
         println("I am standing cuz I am an animal")
@@ -46,6 +57,16 @@ class Animal : Motion, Survival {
 
     // PARADIGM 2
     //fun run() = println("I am running cuz I am an animal")
+}
+
+class Dog : Animal(){
+    override fun walk() {
+        super.walk()
+        println("I am walking as a Dog")
+    }
+
+    // PARADIGM 4
+    //override fun stand(){}
 }
 
 fun main(args: Array<String>){
