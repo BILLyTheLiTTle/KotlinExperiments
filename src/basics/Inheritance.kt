@@ -33,7 +33,7 @@ interface Survival {
  Inherit from another interface also. Doing it we have a problem in calling the stand method from an interface.
  See the declaration of stand method to find out how this is done.
 
- PARADIGM 4
+ PARADIGM 4 - no need to run something in main function
  What is a final method? What is an open method? Can a method be final and override inside an open class?
  Make my mind hurt!
 
@@ -67,6 +67,27 @@ class Dog : Animal(){
 
     // PARADIGM 4
     //override fun stand(){}
+}
+
+/* PARADIGM 5 - no need to run something in main function
+ Declare an abstract class. Methods in abstract classes cannot be overriden unless they have abstract or open modifier
+ */
+abstract class Felidae {
+    abstract fun walk()
+    open fun eat(){
+        println("I am eating like a Felidae")
+    }
+    fun run() = println("I am ruuning cuz I am a Felidae")
+}
+class Cat : Felidae() {
+    override fun walk() {
+        println("I am walking like a Cat")
+    }
+
+    override fun eat() {
+        super.eat()
+        println("I am eating like a Cat")
+    }
 }
 
 fun main(args: Array<String>){
