@@ -39,8 +39,9 @@ interface Survival {
 
  open: A class or method with this modifier is allowed to have subclasses or get overriden.
  final: A class or method with this modifier cannot have subclasses or get overriden.
- All classes in Kotlin are final by default. Read "Effective Java" if you want to find out why.
+            All classes in Kotlin are final by default. Read "Effective Java" if you want to find out why.
  override: Just declare that you override a method from an open class or interface.
+            Overriden methods are open by default
 
  Uncomment the stand function at Dog class and see the compile-time error
  */
@@ -88,6 +89,19 @@ class Cat : Felidae() {
         super.eat()
         println("I am eating like a Cat")
     }
+}
+
+/* PARADIGM 6 - no need to run something in main function
+ Presenting the visibility modifiers
+
+ public: Let everyone know!
+ internal: Let's keep it secret inside the module, right?!
+ protected: It's all about family, me and the subclasses will ever know!
+ private: It's private. Only the class knows. Everyone else who knows, has committed suicide with 3 bullets in the head!
+ */
+internal open class Bird : Animal(){
+    private fun fly() = println("I am flying but I don't want anyone to know about it")
+    protected fun drink() = println("Let my sub-birds know that I am thirsty but don't let the tiger know about it!")
 }
 
 fun main(args: Array<String>){
