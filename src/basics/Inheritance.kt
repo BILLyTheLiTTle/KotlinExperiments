@@ -104,6 +104,24 @@ internal open class Bird : Animal(){
     protected fun drink() = println("Let my sub-birds know that I am thirsty but don't let the tiger know about it!")
 }
 
+/* PARADIGM 7 - no need to run something in main function
+ Inner and nested classes. By default they are nested. We don't want any reference to escape, do we?
+
+ inner: stores no reference to the outer class
+ nested: stores a reference to the outer class
+
+ Uncomment the line at NestedClass and you will see!
+ */
+class OuterClass {
+    val number = 1
+    class NestedClass{
+        //val nestedNumber = this@OuterClass.number
+    }
+    inner class InnerClass{
+        val nestedNumber = this@OuterClass.number
+    }
+}
+
 fun main(args: Array<String>){
     // PARADIGM 2
     println("PARADIGM 2")
