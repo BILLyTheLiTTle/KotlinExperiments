@@ -25,6 +25,38 @@ class Woman (val name: String){
     }
 }
 
+/* PARADIGM 3
+ Different ways to declare a class and its primary constructor.
+
+ constructor: Begins the declaration of a primary or secondary constructor. Of course, you  could have a private
+                constructor in case you don't want the class to be instantiated.
+ init: This block contains initialization code which is executed when the class is created through the primary
+        constructor. You can declare several initializer blocks in a class (see what happens in main function)
+ */
+class SomeClass constructor(_item: String){
+    val item: String
+    val item1:String
+    val item2: Int
+    init {
+        item = _item
+    }
+    init {
+        item2 = 2
+        item1 = "$_item as Item No$item2"
+    }
+}
+// OR, simpler...
+class SomeClassA(_item: String){
+    val item: String
+    init {
+        item = _item
+    }
+}
+// OR, even simpler...
+class SomeClassB(val item: String)
+
+//TODO with secondary constructors, show a private primary constructor
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -36,5 +68,11 @@ fun main(args: Array<String>){
     val girl = Woman("Sissy")
     girl.age = 24
     println("My name is ${girl.name} and I am ${girl.age} years old") // It's a woman! She will not tell you her age!
+
+    //PARADIGM 3
+    println("\nPARADIGM 3")
+    val someClass = SomeClass("SomeClass Item")
+    println("${someClass.item}")
+    println("${someClass.item1}")
 
 }
