@@ -122,6 +122,37 @@ class OuterClass {
     }
 }
 
+/* PARADIGM 8
+ Sealed classes. A sealed class can have subclasses (it is open by default) but in a range.
+ You cannot define in every file you want.
+ You can define subclasses of a sealed class:
+  - inside a block with the "sealed" modifier (Water, Whisky), or
+  - in the same file (Wine)
+ The true power of "sealed" modifier is hidden at the comment where I define the Coffee class.
+ Uncomment this line and inspect the compile-time error at when condition in the "whatIsIt" function!
+ */
+sealed class Liquid {
+    open fun whatAmI() = println("Liquid")
+    class Water : Liquid() {
+        override fun whatAmI() = println("Water")
+    }
+    open class Whisky : Liquid() { // you can have open classes in a sealed block
+        override fun whatAmI() = println("Whisky")
+    }
+}
+class Wine : Liquid()
+//class Coffee : Liquid()
+class WhiskyWithIce : Liquid.Whisky() { // inherit from a class with sealed superclass
+    override fun whatAmI() = println("Whisky on the rocks")
+}
+
+fun whatIsIt(drink: Liquid) =
+        when (drink) {
+            is Liquid.Water -> println("It is water")
+            is Liquid.Whisky -> println("It is whisky")
+            is Wine -> println("It is wine")
+        }
+
 fun main(args: Array<String>){
     // PARADIGM 2
     println("PARADIGM 2")
@@ -131,5 +162,11 @@ fun main(args: Array<String>){
     // PARADIGM 3
     println("\nPARADIGM 3")
     animal.stand()
+
+    // PARADIGM 8
+    println("\nPARADIGM 8")
+    // Uncomment the line below and inspect another compile-time error (Sealed types cannot be instantiated)
+    //whatIsIt(Liquid())
+    whatIsIt(Liquid.Water())
 
 }
