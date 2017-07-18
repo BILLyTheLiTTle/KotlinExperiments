@@ -95,6 +95,18 @@ class AClass {
     }
 }
 
+/* PARADIGM 8
+ Change the visibility of the accessor methods
+ */
+class BClass {
+    var item1 = -1
+    private set
+
+    fun setFirstItem(value: Int) {
+        item1 = value
+    }
+}
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -122,4 +134,11 @@ fun main(args: Array<String>){
     println("\nPARADIGM 7")
     val aClass = AClass(1)
     println("Value 1: ${aClass.value1}, Value 2: ${aClass.value2} and Value 3: ${aClass.value3}")
+
+    //PARADIGM 8
+    println("\nPARADIGM 8")
+    val bClass = BClass()
+    //bClass.item1 = 1
+    bClass.setFirstItem(1)
+    println("Item 1: ${bClass.item1}")
 }
