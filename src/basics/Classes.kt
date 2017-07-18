@@ -120,6 +120,15 @@ class NoDataClass(val aString: String, val anInt: Int)
 
 data class DataClass(val aString: String, val anInt: Int)
 
+/* PARADIGM 10
+ Equality and reference equality
+
+ equals: Check if two objects are equal
+ ==: Check if two objects are equal. "Equals" function is invoked
+ ===: Check for reference equality
+ */
+data class Equalizer(val lastname: String, val firstName: String)
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -172,4 +181,15 @@ fun main(args: Array<String>){
     println("Hashcode of Data Class: ${dataClass.hashCode()}")
     println("Hashcode of Data Class 1: ${dataClass1.hashCode()}")
 
+    //PARADIGM 10
+    println("\nPARADIGM 10")
+    val robert = Equalizer("McCall", "Robert")
+    val denzel = robert
+    val me = Equalizer("McCall", "Robert")
+    println("Compare robert and denzel using equals: ${robert.equals(denzel)}")
+    println("Compare robert and denzel using ==: ${robert == denzel}")
+    println("Compare robert and denzel using ===: ${robert === denzel}")
+    println("Compare robert and me using equals: ${robert.equals(me)}")
+    println("Compare robert and me using ==: ${robert == me}")
+    println("Compare robert and me using ===: ${robert === me}")
 }
