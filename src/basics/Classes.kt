@@ -71,6 +71,12 @@ class AnotherClassSubclass: AnotherClass {
     constructor(value: Int): super(value)
 }
 
+/* PARADIGM 6
+ Constructor with a default parameter. Just like functions.
+ Does this mean that overloading in constructors is, also, over?!
+ */
+class OneMoreClass(val item1: Int =1, val item2: Int =2)
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -89,4 +95,8 @@ fun main(args: Array<String>){
     println("${someClass.item}")
     println("${someClass.item1}")
 
+    //PARADIGM 6
+    println("\nPARADIGM 6")
+    val oneMore = OneMoreClass(item1 = 0)
+    println("Item 1: ${oneMore.item1} and Item 2: ${oneMore.item2}")
 }
