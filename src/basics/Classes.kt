@@ -115,10 +115,15 @@ class BClass {
 
  PITFALL: Properties that are not declared in the primary constructor don't take part in the equality checks
  and hashcode calculation.
+
+ PARADIGM 11
+ Explain the above pitfall using equality check
  */
 class NoDataClass(val aString: String, val anInt: Int)
 
-data class DataClass(val aString: String, val anInt: Int)
+data class DataClass(val aString: String, val anInt: Int) {
+    var anotherString:String = ""
+}
 
 /* PARADIGM 10
  Equality and reference equality
@@ -192,4 +197,12 @@ fun main(args: Array<String>){
     println("Compare robert and me using equals: ${robert.equals(me)}")
     println("Compare robert and me using ==: ${robert == me}")
     println("Compare robert and me using ===: ${robert === me}")
+
+    //PARADIGM 11
+    println("\nPARADIGM 11")
+    val dataClassOne = DataClass("One", 1)
+    dataClassOne.anotherString = "First"
+    val dataClassTwo = DataClass("One", 1)
+    dataClassTwo.anotherString = "Second"
+    println("dataClassOne and dataClassTwo are equals: ${dataClassOne.equals(dataClassTwo)}")
 }
