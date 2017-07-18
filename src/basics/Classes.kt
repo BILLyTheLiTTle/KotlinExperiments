@@ -55,7 +55,14 @@ class SomeClassA(_item: String){
 // OR, even simpler...
 class SomeClassB(val item: String)
 
-//TODO with secondary constructors, show a private primary constructor
+/* PARADIGM 4
+ A class may have secondary constructors without a primary one.
+ */
+class AnotherClass{
+    constructor(value: Int){
+        //initialization code here
+    }
+}
 
 fun main(args: Array<String>){
     //PARADIGM 1
