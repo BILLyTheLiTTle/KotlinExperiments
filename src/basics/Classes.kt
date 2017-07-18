@@ -77,6 +77,24 @@ class AnotherClassSubclass: AnotherClass {
  */
 class OneMoreClass(val item1: Int =1, val item2: Int =2)
 
+/* PARADIGM 7
+ Call another constructor from the same class (using "this") and do an extra job also
+ */
+class AClass {
+
+    val value1: Int
+    val value2: Int
+    var value3 = -1
+    constructor(value: Int): this(value, -1){
+        value3 = 3
+    }
+
+    constructor(value1: Int, value2: Int) {
+        this.value1 = value1
+        this. value2 = value2
+    }
+}
+
 fun main(args: Array<String>){
     //PARADIGM 1
     println("PARADIGM 1")
@@ -99,4 +117,9 @@ fun main(args: Array<String>){
     println("\nPARADIGM 6")
     val oneMore = OneMoreClass(item1 = 0)
     println("Item 1: ${oneMore.item1} and Item 2: ${oneMore.item2}")
+
+    //PARADIGM 7
+    println("\nPARADIGM 7")
+    val aClass = AClass(1)
+    println("Value 1: ${aClass.value1}, Value 2: ${aClass.value2} and Value 3: ${aClass.value3}")
 }
