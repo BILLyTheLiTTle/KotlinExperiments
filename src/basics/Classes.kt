@@ -58,10 +58,17 @@ class SomeClassB(val item: String)
 /* PARADIGM 4
  A class may have secondary constructors without a primary one.
  */
-class AnotherClass{
+open class AnotherClass{
     constructor(value: Int){
         //initialization code here
     }
+}
+
+/* PARADIGM 5
+ Extending a class and declare the same secondary constructor.
+ */
+class AnotherClassSubclass: AnotherClass {
+    constructor(value: Int): super(value)
 }
 
 fun main(args: Array<String>){
