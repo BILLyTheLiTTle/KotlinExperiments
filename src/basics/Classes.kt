@@ -105,7 +105,20 @@ class BClass {
     fun setFirstItem(value: Int) {
         item1 = value
     }
-}
+    }
+
+/* PARADIGM 9
+ The data classes.
+
+ Instead of autogenerate the toString, equals, hashcode method use the "data" modifier.
+ All these functions will be generated without adding source code to your code.
+
+ PITFALL: Properties that are not declared in the primary constructor don't take part in the equality checks
+ and hashcode calculation.
+ */
+class NoDataClass(val aString: String, val anInt: Int)
+
+data class DataClass(val aString: String, val anInt: Int)
 
 fun main(args: Array<String>){
     //PARADIGM 1
@@ -141,4 +154,22 @@ fun main(args: Array<String>){
     //bClass.item1 = 1
     bClass.setFirstItem(1)
     println("Item 1: ${bClass.item1}")
+
+    //PARADIGM 9
+    println("\nPARADIGM 9")
+    println("\ntoString() function difference")
+    val noDataClass = NoDataClass("No Data", 1)
+    val dataClass = DataClass("No Data", 1)
+    println("No Data Class: ${noDataClass.toString()}\nData Class: ${dataClass.toString()}")
+    println("\nequals() function difference")
+    val noDataClass1 = NoDataClass("No Data", 1)
+    val dataClass1 = DataClass("No Data", 1)
+    println("No Data Classes are equals: ${noDataClass.equals(noDataClass1)}\n" +
+            "Data Classes are equals: ${dataClass.equals(dataClass1)}")
+    println("\nhashcode() function difference")
+    println("Hashcode of No Data Class: ${noDataClass.hashCode()}")
+    println("Hashcode of No Data Class 1: ${noDataClass1.hashCode()}")
+    println("Hashcode of Data Class: ${dataClass.hashCode()}")
+    println("Hashcode of Data Class 1: ${dataClass1.hashCode()}")
+
 }
