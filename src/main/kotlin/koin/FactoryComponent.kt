@@ -12,7 +12,7 @@ val moduleF = module {
 
 class FactoryComponent: KoinComponent {
 
-    val componentA: ComponentImplA by inject<ComponentImplA>()
+    private val componentA: ComponentImplA by inject<ComponentImplA>()
 
     fun printInfo(){
         println(componentA.name)
@@ -23,5 +23,4 @@ fun main(args: Array<String>) {
     StandAloneContext.startKoin(listOf(moduleF))
     val factory = FactoryComponent()
     factory.printInfo()
-
 }

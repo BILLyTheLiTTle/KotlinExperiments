@@ -12,7 +12,7 @@ val moduleS = module {
 
 class SingletonComponent: KoinComponent {
 
-   val componentA: ComponentImplA by inject<ComponentImplA>()
+    private val componentA: ComponentImplA by inject<ComponentImplA>()
 
    fun printInfo(){
        println(componentA.name)
