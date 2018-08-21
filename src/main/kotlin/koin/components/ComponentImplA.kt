@@ -1,5 +1,5 @@
 package koin.components
 
-data class ComponentImplA(val name: String): Component {
+data class ComponentImplA(var name: String): Component {
 
 }

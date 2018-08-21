@@ -1,3 +1,3 @@
 package koin.components
 
-data class ComponentUnknown(val name: String = "Unknown", val value: Int = -1)
+data class ComponentUnknown(var name: String = "Unknown", val value: Int = -1)
