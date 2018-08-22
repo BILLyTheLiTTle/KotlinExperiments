@@ -1,7 +1,6 @@
 package koin
 
-import koin.components.BabooskaComponent
-import koin.components.Component
+import koin.components.BabushkaComponentImplA
 import koin.components.ComponentImplA
 import org.koin.dsl.module.module
 import org.koin.standalone.KoinComponent
@@ -9,15 +8,13 @@ import org.koin.standalone.StandAloneContext
 import org.koin.standalone.inject
 
 val moduleRD = module {
-    // not retrieved by get() cuz it is "ComponentImplA" type and not "Component" type
-    single { ComponentImplA("RD ComponentImpl") }
-    single<Component> { ComponentImplA("RD Component") }
-    single { BabooskaComponent(get()) }
+    single { ComponentImplA("RD Component") }
+    single { BabushkaComponentImplA(get()) }
 }
 
 class ResolveDependency: KoinComponent {
 
-    private val babComp: BabooskaComponent by inject<BabooskaComponent>()
+    private val babComp: BabushkaComponentImplA by inject()
 
     fun printInfo(){
         println(babComp.comp.name)

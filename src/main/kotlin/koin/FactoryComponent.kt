@@ -12,7 +12,7 @@ val moduleF = module {
 
 class FactoryComponent: KoinComponent {
 
-    private val componentA: ComponentImplA by inject<ComponentImplA>()
+    private val componentA: ComponentImplA by inject()
 
     fun printInfo(){
         println(componentA.name)
