@@ -8,10 +8,10 @@ import org.koin.standalone.StandAloneContext
 import org.koin.standalone.inject
 import org.koin.standalone.release
 
-val module1 = module("a") {
+val moduleL1 = module("a") {
     single { ComponentImplA("1") }
 }
-val module2 = module("b") {
+val moduleL2 = module("b") {
     single { ComponentImplB("2", 2) }
 }
 
@@ -31,10 +31,10 @@ class Lifecycle: KoinComponent {
 }
 
 fun main(args: Array<String>) {
-    StandAloneContext.startKoin(listOf(module1))
+    StandAloneContext.startKoin(listOf(moduleL1))
 
     // You cannot start again the container but you can load more modules later in this way
-    StandAloneContext.loadKoinModules(listOf(module2))
+    StandAloneContext.loadKoinModules(listOf(moduleL2))
 
     Lifecycle().printInfo()
 
