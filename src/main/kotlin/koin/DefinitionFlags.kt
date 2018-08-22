@@ -8,6 +8,7 @@ import org.koin.standalone.KoinComponent
 import org.koin.standalone.StandAloneContext.startKoin
 import org.koin.standalone.inject
 
+// --- START ---
 val moduleDF = module {
     single { ComponentImplA("DF ComponentImplA") as Component }
 }
@@ -16,10 +17,12 @@ val moduleDF2 = module(override=true) {
 }
 
 // OR
+
 /*val moduleDF3 = module {
     single { ComponentImplA("DF ComponentImplA") as Component }
     single(override=true) { ComponentImplB("DF ComponentImplB", 1) as Component }
 }*/
+// --- END ---
 
 class DefinitionFlags: KoinComponent {
 
@@ -31,10 +34,14 @@ class DefinitionFlags: KoinComponent {
 }
 
 fun main(args: Array<String>) {
+    // --- START ---
     startKoin(listOf(moduleDF, moduleDF2))
 
     // OR
+
+    // Uncomment this if you uncommented "moduleDF3"
     // startKoin(listOf(moduleDF3))
+    // --- END ---
 
     DefinitionFlags().printInfo()
 }

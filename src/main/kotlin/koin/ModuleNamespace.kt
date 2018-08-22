@@ -15,10 +15,14 @@ val moduleMN = module ("module.namespace") {
 
 class ModuleNamespace: KoinComponent {
 
+    // --- START ---
     private val comp: Component by inject(module = "module.namespace.a")
 
     // OR
+
+    // Uncomment this to see that there is no difference
     // private val comp: Component by inject(module = "a")
+    // --- END ---
 
     fun printInfo(){
         println(comp.name)
