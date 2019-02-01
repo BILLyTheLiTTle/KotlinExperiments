@@ -25,6 +25,6 @@ fun main(args: Array<String>) {
     Thread.sleep(100)
 }
 
-fun doAJob(scope: CoroutineScope) = scope.launch { println("I am doing a job"); delay(2000) }
-fun doOtherJob(scope: CoroutineScope) = scope.launch { println("I am doing other job"); delay(2000) }
-fun doAnotherJob(scope: CoroutineScope) = scope.launch { println("I am doing another job"); delay(2000) }
+private fun doAJob(scope: CoroutineScope) = scope.launch { println("I am doing a job"); delay(2000) }
+private fun doOtherJob(scope: CoroutineScope) = scope.launch { println("I am doing other job"); delay(2000) }
+private fun doAnotherJob(scope: CoroutineScope) = scope.launch { println("I am doing another job"); delay(2000) }

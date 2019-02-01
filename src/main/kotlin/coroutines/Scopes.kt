@@ -55,4 +55,4 @@ class ScopedCoroutine(): CoroutineScope {
 
 }
 
-suspend fun doItInAnyScope() = coroutineScope { launch(Dispatchers.IO) { delay(100000) } }
+private suspend fun doItInAnyScope() = coroutineScope { launch(Dispatchers.IO) { delay(100000) } }
